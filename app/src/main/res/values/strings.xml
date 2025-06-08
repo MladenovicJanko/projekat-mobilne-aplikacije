@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">SeminarskiRad</string>
+    <string name="menu">Meni</string>
+    <string name="title_activity_cat_facts">Činjenice o mačkama</string>
+    <string name="title_activity_recordings">Snimljeni sadržaj</string>
+    <string name="records_menu_item">Pregledaj snimljeni sadržaj</string>
+    <string name="cat_facts_menu_item">Činjenice o mačkama</string>
+    <string name="switch_mode_menu_item">Promeni režim prikaza</string>
+    <string name="exit_menu_item">Izlaz</string>
+    <string name="generate_image">Prikaži činjenicu o mačkama</string>
+    <string name="back">Nazad</string>
+    <string name="records_in_menu">Audio Beleške</string>
+    <string name="navigation_drawer_open">Otvori meni</string>
+    <string name="navigation_drawer_close">Zatvori meni</string>
+</resources>

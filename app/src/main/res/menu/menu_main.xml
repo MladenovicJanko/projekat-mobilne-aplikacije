@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_view_recordings"
+        android:title="@string/records_menu_item"
+        android:icon="@android:drawable/stat_notify_voicemail" />
+
+    <item
+        android:id="@+id/nav_cat_facts"
+        android:title="@string/cat_facts_menu_item"
+        android:icon="@android:drawable/ic_dialog_info" />
+
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_toggle_theme"
+            android:title="@string/switch_mode_menu_item"
+            android:icon="@android:drawable/ic_menu_manage"
+            android:orderInCategory="100" />
+        <item
+            android:id="@+id/nav_exit"
+            android:title="@string/exit_menu_item"
+            android:icon="@android:drawable/ic_lock_power_off"
+            android:orderInCategory="101" />
+    </group>
+</menu>
