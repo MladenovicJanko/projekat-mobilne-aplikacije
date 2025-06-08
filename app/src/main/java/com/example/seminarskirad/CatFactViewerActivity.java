@@ -15,9 +15,6 @@ import java.net.URL;
 
 public class CatFactViewerActivity extends AppCompatActivity {
 
-    //Dugmiči za učitavanje nove činjenice o mačkama i povrata na main page.
-    private Button btnLoad, btnBack;
-
     //OnCreate
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +22,9 @@ public class CatFactViewerActivity extends AppCompatActivity {
         setContentView(R.layout.cat_facts_view);
 
         //Preuzimanje dugmića sa forme.
-        btnLoad = findViewById(R.id.btnLoadImage);
-        btnBack = findViewById(R.id.btnBack);
+        //Dugmiči za učitavanje nove činjenice o mačkama i povrata na main page.
+        Button btnLoad = findViewById(R.id.btnLoadImage);
+        Button btnBack = findViewById(R.id.btnBack);
 
         //Postavljanje akcija dugmićima sa forme.
         btnLoad.setOnClickListener(v -> loadRandomCatFactInTextView());

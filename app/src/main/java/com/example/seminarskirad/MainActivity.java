@@ -6,10 +6,12 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.media.MediaRecorder;
+import android.os.Build;
 import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -26,6 +28,7 @@ import java.text.SimpleDateFormat;
 import java.util.Locale;
 import java.util.Date;
 
+@RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
 public class MainActivity extends AppCompatActivity {
 
     //Svojstva za postavljanje režima pregleda i njegovo čuvanje u SharedPreferences.
@@ -41,8 +44,6 @@ public class MainActivity extends AppCompatActivity {
 
     //Svojstva za prikaz menija, navigaciju i toolbar.
     private DrawerLayout drawerLayout;
-    private NavigationView navigationView;
-    private Toolbar toolbar;
 
     //Svojstva za kontrolu snimanja i naziva fajla.
     private boolean isRecording = false;
@@ -82,10 +83,10 @@ public class MainActivity extends AppCompatActivity {
         txtStatus.setText("Započni snimanje pritiskom na dugme");
 
         //Postavka menija, toolbar-a i navigacije.
-        toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         drawerLayout = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
 
         // Hamburger meni sa akcijama.
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(

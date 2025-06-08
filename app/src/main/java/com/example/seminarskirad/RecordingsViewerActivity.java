@@ -12,18 +12,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class RecordingsViewerActivity extends AppCompatActivity {
 
-    //Podaci na View-u.
-    private ListView listView;
-    private ArrayAdapter<String> adapter;
-    private List<File> recordingFiles = new ArrayList<>();
+    private final List<File> recordingFiles = new ArrayList<>();
     private MediaPlayer mediaPlayer;
     private boolean isPlaying = false;
     private File currentlyPlayingFile = null;
-    private Button btnBack;
 
     //OnCreate
     @Override
@@ -32,8 +29,9 @@ public class RecordingsViewerActivity extends AppCompatActivity {
         setContentView(R.layout.recordings_view);
 
         //Preuzimanje dugmića i liste sa View-a.
-        btnBack = findViewById(R.id.btnBack);
-        listView = findViewById(R.id.listViewRecordings);
+        Button btnBack = findViewById(R.id.btnBack);
+        //Podaci na View-u.
+        ListView listView = findViewById(R.id.listViewRecordings);
 
         //Preuzimanje svih .3gp fajlova iz foldera aplikacije.
         loadRecordingFiles();
@@ -45,7 +43,7 @@ public class RecordingsViewerActivity extends AppCompatActivity {
         }
 
         //Inicijalizacija za reprodukciju zvuka.
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, fileNames);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, fileNames);
         listView.setAdapter(adapter);
 
         //Dodavanje akcije listi tako da reprodukuje zvuk na tap item-a.
@@ -66,9 +64,7 @@ public class RecordingsViewerActivity extends AppCompatActivity {
         if (recordingsDir != null) {
             File[] files = recordingsDir.listFiles((dir, name) -> name.endsWith(".3gp"));
             if (files != null) {
-                for (File file : files) {
-                    recordingFiles.add(file);
-                }
+                recordingFiles.addAll(Arrays.asList(files));
             }
         }
     }
